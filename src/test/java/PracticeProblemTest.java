@@ -78,9 +78,10 @@ public class PracticeProblemTest {
         } catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof IllegalStateException) {
-                assertTrue("Exception message should mention funds or balance", 
+                assertTrue( 
                           cause.getMessage().toLowerCase().contains("fund") || 
-                          cause.getMessage().toLowerCase().contains("balance"));
+                          cause.getMessage().toLowerCase().contains("balance"),
+                "Exception message should mention funds or balance");
             } else {
                 fail("Wrong exception type thrown. Expected IllegalStateException, got: " + 
                      (cause != null ? cause.getClass().getName() : "null"));
@@ -98,7 +99,7 @@ public class PracticeProblemTest {
         try {
             Method method = testClass.getDeclaredMethod("validateAge", int.class);
             boolean result = (boolean) method.invoke(null, 25);
-            assertTrue("Valid age should return true", result);
+            assertTrue(result, "Valid age should return true");
         } catch (NoSuchMethodException e) {
             fail("validateAge method not implemented");
         } catch (Exception e) {
@@ -118,8 +119,8 @@ public class PracticeProblemTest {
         } catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof IllegalArgumentException) {
-                assertTrue("Exception message should mention negative", 
-                          cause.getMessage().toLowerCase().contains("negative"));
+                assertTrue(
+                          cause.getMessage().toLowerCase().contains("negative"), "Exception message should mention negative");
             } else {
                 fail("Wrong exception type thrown. Expected IllegalArgumentException, got: " + 
                      (cause != null ? cause.getClass().getName() : "null"));
@@ -141,9 +142,9 @@ public class PracticeProblemTest {
         } catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof IllegalArgumentException) {
-                assertTrue("Exception message should mention realistic or maximum", 
+                assertTrue( 
                           cause.getMessage().toLowerCase().contains("realistic") || 
-                          cause.getMessage().toLowerCase().contains("150"));
+                          cause.getMessage().toLowerCase().contains("150"), "Exception message should mention realistic or maximum");
             } else {
                 fail("Wrong exception type thrown. Expected IllegalArgumentException, got: " + 
                      (cause != null ? cause.getClass().getName() : "null"));
@@ -159,7 +160,7 @@ public class PracticeProblemTest {
         try {
             Method method = testClass.getDeclaredMethod("validateAge", int.class);
             boolean result = (boolean) method.invoke(null, 150);
-            assertTrue("Age of 150 should be valid", result);
+            assertTrue(result, "Age of 150 should be valid");
         } catch (NoSuchMethodException e) {
             fail("validateAge method not implemented");
         } catch (Exception e) {
@@ -196,10 +197,10 @@ public class PracticeProblemTest {
         } catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof NullPointerException) {
-                assertTrue("Exception message should mention null or array", 
+                assertTrue( 
                           cause.getMessage() != null && 
                           (cause.getMessage().toLowerCase().contains("null") || 
-                           cause.getMessage().toLowerCase().contains("array")));
+                           cause.getMessage().toLowerCase().contains("array")), "Exception message should mention null or array");
             } else {
                 fail("Wrong exception type thrown. Expected NullPointerException, got: " + 
                      (cause != null ? cause.getClass().getName() : "null"));
@@ -293,9 +294,9 @@ public class PracticeProblemTest {
         } catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof IllegalArgumentException) {
-                assertTrue("Exception message should mention empty or null", 
+                assertTrue( 
                           cause.getMessage().toLowerCase().contains("empty") || 
-                          cause.getMessage().toLowerCase().contains("null"));
+                          cause.getMessage().toLowerCase().contains("null"), "Exception message should mention empty or null");
             } else {
                 fail("Wrong exception type thrown. Expected IllegalArgumentException, got: " + 
                      (cause != null ? cause.getClass().getName() : "null"));
@@ -317,8 +318,8 @@ public class PracticeProblemTest {
         } catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof IllegalArgumentException) {
-                assertTrue("Exception message should mention empty", 
-                          cause.getMessage().toLowerCase().contains("empty"));
+                assertTrue( 
+                          cause.getMessage().toLowerCase().contains("empty"), "Exception message should mention empty");
             } else {
                 fail("Wrong exception type thrown. Expected IllegalArgumentException, got: " + 
                      (cause != null ? cause.getClass().getName() : "null"));
@@ -340,9 +341,9 @@ public class PracticeProblemTest {
         } catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof IllegalArgumentException) {
-                assertTrue("Exception message should mention invalid or format", 
+                assertTrue( 
                           cause.getMessage().toLowerCase().contains("invalid") || 
-                          cause.getMessage().toLowerCase().contains("format"));
+                          cause.getMessage().toLowerCase().contains("format"), "Exception message should mention invalid or format");
             } else {
                 fail("Wrong exception type thrown. Expected IllegalArgumentException, got: " + 
                      (cause != null ? cause.getClass().getName() : "null"));
@@ -364,9 +365,9 @@ public class PracticeProblemTest {
         } catch (InvocationTargetException e) {
             Throwable cause = e.getCause();
             if (cause instanceof IllegalArgumentException) {
-                assertTrue("Exception message should mention invalid or format", 
+                assertTrue( 
                           cause.getMessage().toLowerCase().contains("invalid") || 
-                          cause.getMessage().toLowerCase().contains("format"));
+                          cause.getMessage().toLowerCase().contains("format"), "Exception message should mention invalid or format");
             } else {
                 fail("Wrong exception type thrown. Expected IllegalArgumentException, got: " + 
                      (cause != null ? cause.getClass().getName() : "null"));
